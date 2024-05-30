@@ -1,0 +1,12 @@
+local player = game.Players.LocalPlayer
+local weapons = player:FindFirstChild("Weapons")
+
+if weapons then
+    for i, weapon in ipairs(weapons:GetChildren()) do
+        if weapon:IsA("BoolValue") then
+            weapon.Value = not weapon.Value
+            wait(0.5) -- Espera meio segundo antes de mudar o próximo valor
+            weapon.Value = not weapon.Value
+        end
+    end
+end
